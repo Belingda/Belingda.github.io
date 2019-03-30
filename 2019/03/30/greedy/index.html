@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="leetcode,">
 
 
 
@@ -79,13 +79,18 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="hello world">
-<meta property="og:url" content="http://yoursite.com/tags/diaries/index.html">
+<meta name="description" content="题目：给出每天股票的价格列表，求买卖股票的最大收益。限制：每天只能持有1股，可以买进和卖出无数次leetcode122题目 贪心算法介绍：关键总结：在对问题求解时，总是做出在当前看来是最好的选择 与动态规划的区别：贪心算法对子问题的解决方案都做出选择且不能回退，而动态规划则是保存以前子问题的结果，并根据以前的结果对当前的问题进行选择，相当于相对贪心算法动态规划有回退功能。 适用场景：问题能够分解成">
+<meta name="keywords" content="leetcode">
+<meta property="og:type" content="article">
+<meta property="og:title" content="贪心算法">
+<meta property="og:url" content="http://yoursite.com/2019/03/30/greedy/index.html">
 <meta property="og:site_name" content="hello world">
+<meta property="og:description" content="题目：给出每天股票的价格列表，求买卖股票的最大收益。限制：每天只能持有1股，可以买进和卖出无数次leetcode122题目 贪心算法介绍：关键总结：在对问题求解时，总是做出在当前看来是最好的选择 与动态规划的区别：贪心算法对子问题的解决方案都做出选择且不能回退，而动态规划则是保存以前子问题的结果，并根据以前的结果对当前的问题进行选择，相当于相对贪心算法动态规划有回退功能。 适用场景：问题能够分解成">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-03-30T08:19:34.458Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="hello world">
+<meta name="twitter:title" content="贪心算法">
+<meta name="twitter:description" content="题目：给出每天股票的价格列表，求买卖股票的最大收益。限制：每天只能持有1股，可以买进和卖出无数次leetcode122题目 贪心算法介绍：关键总结：在对问题求解时，总是做出在当前看来是最好的选择 与动态规划的区别：贪心算法对子问题的解决方案都做出选择且不能回退，而动态规划则是保存以前子问题的结果，并根据以前的结果对当前的问题进行选择，相当于相对贪心算法动态规划有回退功能。 适用场景：问题能够分解成">
 
 
 
@@ -115,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/tags/diaries/">
+  <link rel="canonical" href="http://yoursite.com/2019/03/30/greedy/">
 
 
 
 
 
-  <title>Tag: diaries | hello world</title>
+  <title>贪心算法 | hello world</title>
   
 
 
@@ -140,7 +145,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -224,52 +229,175 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block tag">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>diaries<small>Tag</small>
-        </h1>
-      </div>
+  
 
-      
-        
+  
+  
+  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/30/greedy/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="belinda">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="hello world">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2019/03/23/一些感想/" itemprop="url">
-              
-                <span itemprop="name">一只业务逻辑狗的反思</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">贪心算法</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-03-23T00:00:00+08:00" content="2019-03-23">
-          03-23
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-30T00:00:00+08:00">
+                2019-03-30
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/03/30/greedy/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/03/30/greedy/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2019/03/30/greedy/" class="leancloud_visitors" data-flag-title="贪心算法">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Visitors&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="题目："><a href="#题目：" class="headerlink" title="题目："></a>题目：</h3><p>给出每天股票的价格列表，求买卖股票的最大收益。<br>限制：每天只能持有1股，可以买进和卖出无数次<br><a href="https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/description/" target="_blank" rel="noopener">leetcode122题目</a></p>
+<h3 id="贪心算法介绍："><a href="#贪心算法介绍：" class="headerlink" title="贪心算法介绍："></a>贪心算法介绍：</h3><h5 id="关键总结："><a href="#关键总结：" class="headerlink" title="关键总结："></a>关键总结：</h5><p>在对问题求解时，总是做出在当前看来是最好的选择</p>
+<h5 id="与动态规划的区别："><a href="#与动态规划的区别：" class="headerlink" title="与动态规划的区别："></a>与动态规划的区别：</h5><p>贪心算法对子问题的解决方案都做出选择且不能回退，而动态规划则是保存以前子问题的结果，并根据以前的结果对当前的问题进行选择，相当于相对贪心算法动态规划有回退功能。</p>
+<h5 id="适用场景："><a href="#适用场景：" class="headerlink" title="适用场景："></a>适用场景：</h5><p>问题能够分解成子问题解决（分治思想），且子问题的最优解能够递推到最终问题的最优解。<br>贪心算法的适用场景较少。</p>
+<h3 id="算法思路："><a href="#算法思路：" class="headerlink" title="算法思路："></a>算法思路：</h3><p>遍历列表，比较前一天的股票价格和今天的股票价格，如果今天的股票价格高于前一天的股票价格则在前一天买入今天抛出并计算收益。<br>代码如下：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">class Solution(object):</span><br><span class="line">    def maxProfit(self, prices):</span><br><span class="line">        <span class="string">""</span><span class="string">"</span></span><br><span class="line"><span class="string">        :type prices: List[int]</span></span><br><span class="line"><span class="string">        :rtype: int</span></span><br><span class="line"><span class="string">        "</span><span class="string">""</span></span><br><span class="line">        <span class="keyword">if</span> len(prices)==0:</span><br><span class="line">            <span class="built_in">return</span> 0</span><br><span class="line">        profit=0</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(0,len(prices)-1):</span><br><span class="line">            <span class="keyword">if</span> prices[i+1]&gt;prices[i]:</span><br><span class="line">                profit+=prices[i+1]-prices[i]</span><br><span class="line">        <span class="built_in">return</span> profit</span><br></pre></td></tr></table></figure>
+<p>时间复杂度o(n)</p>
+<h3 id="体会"><a href="#体会" class="headerlink" title="体会"></a>体会</h3><p>感觉贪心算法的适用场景还是较少</p>
 
       
     </div>
+    
+    
+    
 
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/leetcode/" rel="tag"># leetcode</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/03/29/leetcode169/" rel="next" title="求众数（字典相关）">
+                <i class="fa fa-chevron-left"></i> 求众数（字典相关）
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -277,6 +405,13 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
 
         </div>
         
@@ -297,8 +432,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -349,6 +493,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#题目："><span class="nav-number">1.</span> <span class="nav-text">题目：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#贪心算法介绍："><span class="nav-number">2.</span> <span class="nav-text">贪心算法介绍：</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#关键总结："><span class="nav-number">2.0.1.</span> <span class="nav-text">关键总结：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#与动态规划的区别："><span class="nav-number">2.0.2.</span> <span class="nav-text">与动态规划的区别：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#适用场景："><span class="nav-number">2.0.3.</span> <span class="nav-text">适用场景：</span></a></li></ol></li></ol><li class="nav-item nav-level-3"><a class="nav-link" href="#算法思路："><span class="nav-number">3.</span> <span class="nav-text">算法思路：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#体会"><span class="nav-number">4.</span> <span class="nav-text">体会</span></a></li></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -482,6 +642,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
