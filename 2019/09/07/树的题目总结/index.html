@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="树的题目通常可以用递归解决，递归过程的本质是栈，因而理论上递归也可以用循环加堆栈（或者队列）解决 关于递归递归非常容易让人思路混乱，看到网上有一种思路觉得很有用，就是假设子问题已经完美处理，你只需思考最终问题的处理思路，子问题的处理思路和最终问题的处理思路一样，这样思路就会清晰很多。以下代码示例均为python版本 题目一：从上往下打印二叉树题目描述：从上往下打印出二叉树的每个节点，同层节点从左至">
+<meta property="og:type" content="article">
+<meta property="og:title" content="hello world">
+<meta property="og:url" content="http://yoursite.com/2019/09/07/树的题目总结/index.html">
+<meta property="og:site_name" content="hello world">
+<meta property="og:description" content="树的题目通常可以用递归解决，递归过程的本质是栈，因而理论上递归也可以用循环加堆栈（或者队列）解决 关于递归递归非常容易让人思路混乱，看到网上有一种思路觉得很有用，就是假设子问题已经完美处理，你只需思考最终问题的处理思路，子问题的处理思路和最终问题的处理思路一样，这样思路就会清晰很多。以下代码示例均为python版本 题目一：从上往下打印二叉树题目描述：从上往下打印出二叉树的每个节点，同层节点从左至">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190823102105560.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190823103420629.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190823102921651.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190823141916941.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190823113147571.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190823110053440.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0JlbGluZ2Rh,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190823111201354.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190823120335889.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190823115252724.png">
+<meta property="og:updated_time" content="2019-09-07T11:07:52.684Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="hello world">
+<meta name="twitter:description" content="树的题目通常可以用递归解决，递归过程的本质是栈，因而理论上递归也可以用循环加堆栈（或者队列）解决 关于递归递归非常容易让人思路混乱，看到网上有一种思路觉得很有用，就是假设子问题已经完美处理，你只需思考最终问题的处理思路，子问题的处理思路和最终问题的处理思路一样，这样思路就会清晰很多。以下代码示例均为python版本 题目一：从上往下打印二叉树题目描述：从上往下打印出二叉树的每个节点，同层节点从左至">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/20190823102105560.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/09/07/树的题目总结/">
+
+
+
+
+
+  <title> | hello world</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">hello world</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/07/树的题目总结/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="belinda">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="hello world">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline"></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-09-07T19:05:42+08:00">
+                2019-09-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/09/07/树的题目总结/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/09/07/树的题目总结/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2019/09/07/树的题目总结/" class="leancloud_visitors" data-flag-title>
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Visitors&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>树的题目通常可以用递归解决，递归过程的本质是栈，因而理论上递归也可以用循环加堆栈（或者队列）解决</p>
+<h5 id="关于递归"><a href="#关于递归" class="headerlink" title="关于递归"></a>关于递归</h5><p>递归非常容易让人思路混乱，看到网上有一种思路觉得很有用，就是假设子问题已经完美处理，你只需思考最终问题的处理思路，子问题的处理思路和最终问题的处理思路一样，这样思路就会清晰很多。<br>以下代码示例均为python版本</p>
+<h5 id="题目一：从上往下打印二叉树"><a href="#题目一：从上往下打印二叉树" class="headerlink" title="题目一：从上往下打印二叉树"></a>题目一：从上往下打印二叉树</h5><h6 id="题目描述："><a href="#题目描述：" class="headerlink" title="题目描述："></a>题目描述：</h6><p>从上往下打印出二叉树的每个节点，同层节点从左至右打印。</p>
+<h6 id="算法思路："><a href="#算法思路：" class="headerlink" title="算法思路："></a>算法思路：</h6><p>很明显用层次遍历就可以解决，即广度遍历，从上往下打印，即每一层打印完之后需要按照父节点们的顺序继续打印子节点，<br>符合队列先进先出的特点，因而需要借助队列+循环判断就可以解决。<br>即借助队列，将根结点加入队列，每遍历到一个结点，将该结点移除出队列并将该结点的左右节点加入队列，重复这个过程，直至队列为空。<br><img src="https://img-blog.csdnimg.cn/20190823102105560.png" alt="来源:剑指offer"></p>
+<h6 id="关键字：队列-循环"><a href="#关键字：队列-循环" class="headerlink" title="关键字：队列 循环"></a>关键字：队列 循环</h6><p>代码如下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"># -*- coding:utf-8 -*-</span><br><span class="line">class TreeNode:</span><br><span class="line">	def __init__(self, x):</span><br><span class="line">		self.val = x</span><br><span class="line">		self.left = None</span><br><span class="line">		self.right = None</span><br><span class="line"></span><br><span class="line">class Solution:</span><br><span class="line">	# 返回从上到下每个节点值列表，例：[1,2,3]</span><br><span class="line">	def PrintFromTopToBottom(self, root):</span><br><span class="line">		if root is None:</span><br><span class="line">			return []</span><br><span class="line">		tempnode = []</span><br><span class="line">		tempnode.append(root)</span><br><span class="line">		valres = []</span><br><span class="line">		while (len(tempnode) &gt; 0):</span><br><span class="line">			node = tempnode.pop(0)</span><br><span class="line">			valres.append(node.val)</span><br><span class="line">			if node.left is not None:</span><br><span class="line">				tempnode.append(node.left)</span><br><span class="line">			if node.right is not None:</span><br><span class="line">				tempnode.append(node.right)</span><br><span class="line">		return valres</span><br></pre></td></tr></table></figure></p>
+<h5 id="题目二：二叉树的镜像"><a href="#题目二：二叉树的镜像" class="headerlink" title="题目二：二叉树的镜像"></a>题目二：二叉树的镜像</h5><h6 id="题目描述：-1"><a href="#题目描述：-1" class="headerlink" title="题目描述："></a>题目描述：</h6><p>操作给定的二叉树，将其变换为源二叉树的镜像。<br>如下图：<br><img src="https://img-blog.csdnimg.cn/20190823103420629.png" alt="来源：剑指offer"></p>
+<h6 id="算法思路：-1"><a href="#算法思路：-1" class="headerlink" title="算法思路："></a>算法思路：</h6><p>从题目可以知道二叉树的镜像其实可以看成是左右子结点交换的过程，如下图：<br><img src="https://img-blog.csdnimg.cn/20190823102921651.png" alt="来源：剑指offer"><br>因而我们在前序遍历（顺序为根子树-&gt;左子树-&gt;右子树）的基础上，交换当前结点的左右子结点，就可以完成二叉树的镜像。<br>代码如下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"># -*- coding:utf-8 -*-</span><br><span class="line">&apos;&apos;&apos;</span><br><span class="line">	树的镜像</span><br><span class="line">	思路：递归交换左右结点</span><br><span class="line">&apos;&apos;&apos;</span><br><span class="line">class TreeNode:</span><br><span class="line">	def __init__(self, x):</span><br><span class="line">		self.val = x</span><br><span class="line">		self.left = None</span><br><span class="line">		self.right = None</span><br><span class="line"></span><br><span class="line">class Solution:</span><br><span class="line">	# 返回镜像树的根节点</span><br><span class="line">	def Mirror(self, root):</span><br><span class="line">		# write code here</span><br><span class="line">		if root is None:</span><br><span class="line">			return root</span><br><span class="line">		if root.left is None and root.right is None:</span><br><span class="line">			return root</span><br><span class="line">		tempNode = root.left</span><br><span class="line">		root.left = root.right</span><br><span class="line">		root.right = tempNode</span><br><span class="line">		self.Mirror(root.left)</span><br><span class="line">		self.Mirror(root.right)</span><br></pre></td></tr></table></figure></p>
+<h6 id="关键字：递归-前序遍历"><a href="#关键字：递归-前序遍历" class="headerlink" title="关键字：递归 前序遍历"></a>关键字：递归 前序遍历</h6><h5 id="题目三：二叉搜索树的后序遍历序列"><a href="#题目三：二叉搜索树的后序遍历序列" class="headerlink" title="题目三：二叉搜索树的后序遍历序列"></a>题目三：二叉搜索树的后序遍历序列</h5><h6 id="题目描述：-2"><a href="#题目描述：-2" class="headerlink" title="题目描述："></a>题目描述：</h6><p>输入一个整数数组，判断该数组是不是某二叉搜索树的后序遍历的结果。如果是则返回True，否则返回False。假设输入的数组的任意两个数字都互不相同。</p>
+<h6 id="算法思路：-2"><a href="#算法思路：-2" class="headerlink" title="算法思路："></a>算法思路：</h6><p>二叉搜索树：</p>
+<p>是指一棵空树或者具有下列性质的二叉树：</p>
+<p>若任意节点的左子树不空，则左子树上所有节点的值均小于它的根节点的值；<br>若任意节点的右子树不空，则右子树上所有节点的值均大于它的根节点的值；<br>任意节点的左、右子树也分别为二叉查找树；<br>没有键值相等的结点。<br><img src="https://img-blog.csdnimg.cn/20190823141916941.png" alt="来源：剑指offer"></p>
+<p>后序遍历顺序：左子树-&gt;右子树-&gt;根结点</p>
+<p>1）递归方法<br>由后序遍历顺序可知，序列的最后一个元素为根结点，根据二叉搜索树的特点可知，左子树的每个非空结点都不大于根结点，右子树的每个非空结点都不小于根结点，题目中规定序列中各个结点都不重复，因此可以确定题目中给的测试用例中，左子树的每个结点势必都小于根结点，右子树的每个结点势必都大于根结点。<br>因此从左往右查找，找到第1个大于根结点的值则说明这个元素往左边的元素是左子树，该元素及往右边的元素到最后一个结点前为右子树。<br>如果左子树有任一元素大于根结点，或者右子树有任一元素小于根结点，说明该序列不为二叉搜索树遍历序列。<br>以此方法进行递归判断。</p>
+<p><img src="https://img-blog.csdnimg.cn/20190823113147571.png" alt="图片"><br>图中最后一个元素8为根结点，元素9为从左往右序列中第一个大于根结点的值，以9往左为左子树，9和9往右到最后一个元素8前为右子树。<br>观察可知 如果符合二叉搜索树，则右子树序列元素都比根结点大<br>左右子序列以此方法递归可判断。<br>代码如下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"># -*- coding:utf-8 -*-</span><br><span class="line">class Solution:</span><br><span class="line">	def VerifySquenceOfBST(self, sequence):</span><br><span class="line">		# write code here</span><br><span class="line">		if sequence is None or len(sequence) == 0:</span><br><span class="line">			return False</span><br><span class="line">		return self.VerifyBST(sequence)</span><br><span class="line"></span><br><span class="line">	def VerifyBST(self,verifys):</span><br><span class="line">		if len(verifys) &lt;= 1:  # 只剩根结点</span><br><span class="line">			return True</span><br><span class="line">		root = verifys[-1]</span><br><span class="line">		temps = verifys[:-1]</span><br><span class="line">		lefts = []</span><br><span class="line">		rights = []</span><br><span class="line">		for i in range(len(temps)):</span><br><span class="line">			if temps[i] &gt; root:</span><br><span class="line">				lefts = temps[0:i]</span><br><span class="line">				if i &lt;= len(temps) - 1:</span><br><span class="line">					rights = temps[i:-1]</span><br><span class="line">				break</span><br><span class="line">		else:</span><br><span class="line">			lefts = temps</span><br><span class="line">		for v in rights:</span><br><span class="line">			if v &lt; root:</span><br><span class="line">				return False</span><br><span class="line">		return self.VerifyBST(lefts) and self.VerifyBST(rights)</span><br></pre></td></tr></table></figure></p>
+<p>2）非递归方法（牛客网上看到的）<br>大致思路是根据后序遍历，将当前结点A作为根结点，遍历结点A前面序列的值，如果当前序列元素值小于结点A的值，并且前一序列元素值也大于结点A的值 说明不是二叉搜索树。</p>
+<p>参考链接 <a href="https://www.nowcoder.com/questionTerminal/a861533d45854474ac791d90e447bafd?f=discussion" target="_blank" rel="noopener">牛客网</a><br><img src="https://img-blog.csdnimg.cn/20190823110053440.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0JlbGluZ2Rh,size_16,color_FFFFFF,t_70" alt="截图(侵删)："><br>图片侵删</p>
+<h6 id="关键字：递归-二叉搜索树特点"><a href="#关键字：递归-二叉搜索树特点" class="headerlink" title="关键字：递归 二叉搜索树特点"></a>关键字：递归 二叉搜索树特点</h6><h5 id="题目四：二叉树中和为某一值的路径"><a href="#题目四：二叉树中和为某一值的路径" class="headerlink" title="题目四：二叉树中和为某一值的路径"></a>题目四：二叉树中和为某一值的路径</h5><h6 id="题目描述：-3"><a href="#题目描述：-3" class="headerlink" title="题目描述："></a>题目描述：</h6><p>输入一颗二叉树的根节点和一个整数，打印出二叉树中结点值的和为输入整数的所有路径。路径定义为从树的根结点开始往下一直到叶结点所经过的结点形成一条路径。</p>
+<h6 id="算法思路：-3"><a href="#算法思路：-3" class="headerlink" title="算法思路："></a>算法思路：</h6><p>路径指的是树的根结点到叶结点所经过的结点，因此题目其实是求从根结点到某一叶结点的路径上所有结点的和是否为题目中要求的值。<br>因为计算是从根结点开始，所以其实可以看成是树的前序遍历的基础上计算路径和，由于题目要求打印出路径，因而每次遍历结点需要记录下当前结点，到达叶结点时需要判断该路径是否符合条件，当递归回退到上一个结点时需要从路径中移除当前结点即路径的最后一个结点，记录路径可以用堆栈。<br>示例：<br><img src="https://img-blog.csdnimg.cn/20190823111201354.png" alt="来源：剑指offer"><br>根结点到叶结点加入堆栈 ，堆栈中加入序列为 10，5， 4；<br> 10+5+4不等于22，不记录路径；<br> 弹出4，回到父结点5，堆栈序列 10,5；<br> 右叶结点7 进栈 ，堆栈序列 10,5,7,等于22 ，记录路径；<br> 弹出7，回到5；<br> 弹出5，回到10；<br> 叶结点12进栈，堆栈序列 10,12 等于 22 ，记录路径；<br> 所以符合条件的路径为[10,5,7]和[10,12]。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"># -*- coding:utf-8 -*-</span><br><span class="line">&quot;&quot;&quot;</span><br><span class="line">二叉树中和为某一值的路径</span><br><span class="line">&quot;&quot;&quot;</span><br><span class="line">class TreeNode:</span><br><span class="line">	def __init__(self, x):</span><br><span class="line">		self.val = x</span><br><span class="line">		self.left = None</span><br><span class="line">		self.right = None</span><br><span class="line">class Solution:</span><br><span class="line">	# 返回二维列表，内部每个列表表示找到的路径</span><br><span class="line">	def FindPath(self, root, expectNumber):</span><br><span class="line">		return self.RealFindPath(root, 0, expectNumber, [], [])</span><br><span class="line"></span><br><span class="line">	def RealFindPath(self, root, sum, expectNumber, path, allpath):</span><br><span class="line">		if root is None:</span><br><span class="line">			return allpath</span><br><span class="line">		sum += root.val</span><br><span class="line">		path.append(root.val)</span><br><span class="line">		if root.left is None and root.right is None:</span><br><span class="line">			if sum == expectNumber:</span><br><span class="line">				allpath.append(path[:])</span><br><span class="line">		if root.left:</span><br><span class="line">			self.RealFindPath(root.left, sum, expectNumber, path, allpath)</span><br><span class="line">		if root.right:</span><br><span class="line">			self.RealFindPath(root.right, sum, expectNumber, path, allpath)</span><br><span class="line">		# 回退到上个结点前弹出当前元素</span><br><span class="line">		if len(path) &gt; 0:</span><br><span class="line">			num = path.pop()  # 弹出末尾元素</span><br><span class="line">			sum = sum - num</span><br><span class="line">		return allpath</span><br></pre></td></tr></table></figure></p>
+<h6 id="关键字：递归-堆栈"><a href="#关键字：递归-堆栈" class="headerlink" title="关键字：递归 堆栈"></a>关键字：递归 堆栈</h6><h5 id="题目五：对称的二叉树"><a href="#题目五：对称的二叉树" class="headerlink" title="题目五：对称的二叉树"></a>题目五：对称的二叉树</h5><h6 id="题目描述：-4"><a href="#题目描述：-4" class="headerlink" title="题目描述："></a>题目描述：</h6><p>请实现一个函数，用来判断一颗二叉树是不是对称的。注意，如果一个二叉树同此二叉树的镜像是同样的，定义其为对称的。</p>
+<h6 id="算法思路：-4"><a href="#算法思路：-4" class="headerlink" title="算法思路："></a>算法思路：</h6><p>递归方法：<br>如下图，由对称的二叉树观察得知，同一父节点的左子结点（6）的左结点（矩形1）和右子结点（6）的右结点（矩形1）如果不相等（一个为空另一个不为空也是不相等），或者同一父节点的左子结点（6）的右结点（圆形3）和右子结点（6）的左结点（圆形3）如果不相等（一个为空另一个不为空也是不相等），则说明该二叉树不为对称二叉树。<br><img src="https://img-blog.csdnimg.cn/20190823120335889.png" alt="示例"><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"># -*- coding:utf-8 -*-</span><br><span class="line">class TreeNode:</span><br><span class="line">	def __init__(self, x):</span><br><span class="line">		self.val = x</span><br><span class="line">		self.left = None</span><br><span class="line">		self.right = None</span><br><span class="line">	</span><br><span class="line">class Solution:</span><br><span class="line">	def isSymmetrical(self, pRoot):</span><br><span class="line">		if pRoot is None:</span><br><span class="line">			return True</span><br><span class="line">		return self.IsRealSymmetrical(pRoot.left, pRoot.right)</span><br><span class="line"></span><br><span class="line">	def IsRealSymmetrical(self, Lroot, Rroot):</span><br><span class="line">		if (Lroot and Rroot is None) or (Rroot and Lroot is None):</span><br><span class="line">			return False</span><br><span class="line">		if Lroot is None and Rroot is None:</span><br><span class="line">			return True</span><br><span class="line">		if Lroot.val != Rroot.val:</span><br><span class="line">			return False</span><br><span class="line">		return self.IsRealSymmetrical(Lroot.left, Rroot.right) and self.IsRealSymmetrical(Lroot.right, Rroot.left)</span><br></pre></td></tr></table></figure></p>
+<h6 id="关键字：递归-非递归"><a href="#关键字：递归-非递归" class="headerlink" title="关键字：递归 非递归"></a>关键字：递归 非递归</h6><h5 id="题目六：重建二叉树"><a href="#题目六：重建二叉树" class="headerlink" title="题目六：重建二叉树"></a>题目六：重建二叉树</h5><h6 id="题目描述：-5"><a href="#题目描述：-5" class="headerlink" title="题目描述："></a>题目描述：</h6><p>输入某二叉树的前序遍历和中序遍历的结果，请重建出该二叉树。假设输入的前序遍历和中序遍历的结果中都不含重复的数字。例如输入前序遍历序列{1,2,4,7,3,5,6,8}和中序遍历序列{4,7,2,1,5,3,8,6}，则重建二叉树并返回。</p>
+<h6 id="算法思路：-5"><a href="#算法思路：-5" class="headerlink" title="算法思路："></a>算法思路：</h6><p>由前序序列和中序序列可得二叉树。由前序遍历的遍历过程可以知道，前序序列的第1个元素为根结点，在中序序列中找到根结点，序列中根结点往左为左子树，根结点往右为右子树。根据此方法递归可重建二叉树，递归的本质是栈（先进后出），因而最后递归返回的结点即为根结点。<br><img src="https://img-blog.csdnimg.cn/20190823115252724.png" alt="来源：剑指offfer"></p>
+<h6 id="关键字：递归"><a href="#关键字：递归" class="headerlink" title="关键字：递归"></a>关键字：递归</h6><p>==============================<br>发现一个好玩的项目 ~<br> <a href="https://github.com/Wscats/piano" target="_blank" rel="noopener">https://github.com/Wscats/piano</a></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/03/30/greedy/" rel="next" title="贪心算法">
+                <i class="fa fa-chevron-left"></i> 贪心算法
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">belinda</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#关于递归"><span class="nav-number">1.</span> <span class="nav-text">关于递归</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#题目一：从上往下打印二叉树"><span class="nav-number">2.</span> <span class="nav-text">题目一：从上往下打印二叉树</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#题目描述："><span class="nav-number">2.1.</span> <span class="nav-text">题目描述：</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#算法思路："><span class="nav-number">2.2.</span> <span class="nav-text">算法思路：</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#关键字：队列-循环"><span class="nav-number">2.3.</span> <span class="nav-text">关键字：队列 循环</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#题目二：二叉树的镜像"><span class="nav-number">3.</span> <span class="nav-text">题目二：二叉树的镜像</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#题目描述：-1"><span class="nav-number">3.1.</span> <span class="nav-text">题目描述：</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#算法思路：-1"><span class="nav-number">3.2.</span> <span class="nav-text">算法思路：</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#关键字：递归-前序遍历"><span class="nav-number">3.3.</span> <span class="nav-text">关键字：递归 前序遍历</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#题目三：二叉搜索树的后序遍历序列"><span class="nav-number">4.</span> <span class="nav-text">题目三：二叉搜索树的后序遍历序列</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#题目描述：-2"><span class="nav-number">4.1.</span> <span class="nav-text">题目描述：</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#算法思路：-2"><span class="nav-number">4.2.</span> <span class="nav-text">算法思路：</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#关键字：递归-二叉搜索树特点"><span class="nav-number">4.3.</span> <span class="nav-text">关键字：递归 二叉搜索树特点</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#题目四：二叉树中和为某一值的路径"><span class="nav-number">5.</span> <span class="nav-text">题目四：二叉树中和为某一值的路径</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#题目描述：-3"><span class="nav-number">5.1.</span> <span class="nav-text">题目描述：</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#算法思路：-3"><span class="nav-number">5.2.</span> <span class="nav-text">算法思路：</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#关键字：递归-堆栈"><span class="nav-number">5.3.</span> <span class="nav-text">关键字：递归 堆栈</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#题目五：对称的二叉树"><span class="nav-number">6.</span> <span class="nav-text">题目五：对称的二叉树</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#题目描述：-4"><span class="nav-number">6.1.</span> <span class="nav-text">题目描述：</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#算法思路：-4"><span class="nav-number">6.2.</span> <span class="nav-text">算法思路：</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#关键字：递归-非递归"><span class="nav-number">6.3.</span> <span class="nav-text">关键字：递归 非递归</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#题目六：重建二叉树"><span class="nav-number">7.</span> <span class="nav-text">题目六：重建二叉树</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#题目描述：-5"><span class="nav-number">7.1.</span> <span class="nav-text">题目描述：</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#算法思路：-5"><span class="nav-number">7.2.</span> <span class="nav-text">算法思路：</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#关键字：递归"><span class="nav-number">7.3.</span> <span class="nav-text">关键字：递归</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">belinda</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: true,
+        appId: 'JTI8aJ4GAK7wbzrE5LxBzedD-gzGzoHsz',
+        appKey: '73dFfz8FEtex5267IvUwiIwB',
+        placeholder: '快留下你的评论吧~',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+
+  
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("JTI8aJ4GAK7wbzrE5LxBzedD-gzGzoHsz", "73dFfz8FEtex5267IvUwiIwB");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
